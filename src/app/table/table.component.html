@@ -1,0 +1,56 @@
+<div>
+    <ul>
+  <button (click)="onEmployee()">Employee</button>
+    <button (click)="onOrder()">Order</button>
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+    <div [hidden]="status !== 'emp'">
+        <div *ngFor="let t of tables">
+        <table border="3" class="table" style="margin: 50px auto;width: 50%;text-align: center">
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>age</td>
+
+            </tr>
+            <tr *ngFor="let f of t.fields">
+                <td>{{f.id}}</td>
+                <td>{{f.name}}</td>
+                <td>{{f.age}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+<div [hidden]="status !== 'ord'">
+    <div *ngFor="let t of tables">
+        <table border="3" class="table" style="margin: 50px auto;width: 50%;text-align: center">
+            <tr>
+                <td>id</td>
+                <td>order_date</td>
+                <td> employee</td>
+
+            </tr>
+            <tr *ngFor="let f of t.fields">
+                <td>{{f.id}}</td>
+                <td>{{f.order_date}}</td>
+                <td>{{f.employee}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
